@@ -14,6 +14,9 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 
         [SerializeField]
         private Button _hostAndPlayBtn;
+
+        [SerializeField]
+        private Button _backBtn;
         #endregion
 
         #region Properties
@@ -27,26 +30,34 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #region Public Methods
         public override void AddListeners()
         {
-            _connectViaIPBtn.onClick.AddListener(OnConnectViaIPButtonClicked);
-            _hostAndPlayBtn.onClick.AddListener(OnHostAndPlayButtonClicked);
+            RemoveListeners();
+            _connectViaIPBtn.onClick.AddListener(OnConnectViaIPBtnClicked);
+            _hostAndPlayBtn.onClick.AddListener(OnHostAndPlayBtnClicked);
+            _backBtn.onClick.AddListener(OnBackBtnClicked);
         }
 
         public override void RemoveListeners()
         {
-            _connectViaIPBtn.onClick.RemoveListener(OnConnectViaIPButtonClicked);
-            _hostAndPlayBtn.onClick.RemoveListener(OnHostAndPlayButtonClicked);
+            _connectViaIPBtn.onClick.RemoveListener(OnConnectViaIPBtnClicked);
+            _hostAndPlayBtn.onClick.RemoveListener(OnHostAndPlayBtnClicked);
+            _backBtn.onClick.RemoveListener(OnBackBtnClicked);
         }
         #endregion
 
         #region Private Methods
-        private void OnConnectViaIPButtonClicked()
+        private void OnConnectViaIPBtnClicked()
         {
             _mainMenuManager.ChangeState(MainMenuStateType.ConnectViaIP);
         }
 
-        private void OnHostAndPlayButtonClicked()
+        private void OnHostAndPlayBtnClicked()
         {
             _mainMenuManager.ChangeState(MainMenuStateType.PlayerSelection);
+        }
+
+        private void OnBackBtnClicked()
+        {
+            _mainMenuManager.GoBack();
         }
         #endregion
     }

@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 4711840915874965317}
   - component: {fileID: 7629781167469177669}
   m_Layer: 5
-  m_Name: Delete
+  m_Name: Remove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,6 +1187,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793d1b18e9ea8be4a979898087aea3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _avatarImage: {fileID: 943349541826206471}
+  _nameText: {fileID: 7207953083870604532}
+  _statsText: {fileID: 4878542254837827633}
+  _selectBtn: {fileID: 6076163728620887544}
+  _removeBtn: {fileID: 7629781167469177669}
+  _pinBtn: {fileID: 8995123822712930911}
 --- !u!1 &6644335826121360993
 GameObject:
   m_ObjectHideFlags: 0

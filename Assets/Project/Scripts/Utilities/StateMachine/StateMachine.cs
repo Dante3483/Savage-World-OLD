@@ -5,7 +5,7 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
     public class StateMachine : IStateMachine
     {
         #region Fields
-        private readonly Dictionary<int, IState> _states;
+        private readonly Dictionary<int, IState> _states = new();
         private IState _currentState;
         #endregion
 
@@ -18,17 +18,12 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
         #endregion
 
         #region Public Methods
-        public StateMachine()
-        {
-            _states = new Dictionary<int, IState>();
-        }
-
         public bool RegisterState(int stateId, IState state)
         {
             return _states.TryAdd(stateId, state);
         }
 
-        public bool ChangeState(int stateId)
+        public virtual bool ChangeState(int stateId)
         {
             if (!_states.TryGetValue(stateId, out var state))
             {

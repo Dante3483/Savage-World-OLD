@@ -33,38 +33,39 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #region Public Methods
         public override void AddListeners()
         {
-            _singlePlayerBtn.onClick.AddListener(OnSinglePlayerButtonClicked);
-            _multiplayerBtn.onClick.AddListener(OnMultiplayerButtonClicked);
-            _settingsBtn.onClick.AddListener(OnSettingsButtonClicked);
-            _exitBtn.onClick.AddListener(OnExitButtonClicked);
+            RemoveListeners();
+            _singlePlayerBtn.onClick.AddListener(OnSinglePlayerBtnClicked);
+            _multiplayerBtn.onClick.AddListener(OnMultiplayerBtnClicked);
+            _settingsBtn.onClick.AddListener(OnSettingsBtnClicked);
+            _exitBtn.onClick.AddListener(OnExitBtnClicked);
         }
 
         public override void RemoveListeners()
         {
-            _singlePlayerBtn.onClick.RemoveListener(OnSinglePlayerButtonClicked);
-            _multiplayerBtn.onClick.RemoveListener(OnMultiplayerButtonClicked);
-            _settingsBtn.onClick.RemoveListener(OnSettingsButtonClicked);
-            _exitBtn.onClick.RemoveListener(OnExitButtonClicked);
+            _singlePlayerBtn.onClick.RemoveListener(OnSinglePlayerBtnClicked);
+            _multiplayerBtn.onClick.RemoveListener(OnMultiplayerBtnClicked);
+            _settingsBtn.onClick.RemoveListener(OnSettingsBtnClicked);
+            _exitBtn.onClick.RemoveListener(OnExitBtnClicked);
         }
         #endregion
 
         #region Private Methods
-        private void OnSinglePlayerButtonClicked()
+        private void OnSinglePlayerBtnClicked()
         {
             _mainMenuManager.ChangeState(MainMenuStateType.PlayerSelection);
         }
 
-        private void OnMultiplayerButtonClicked()
+        private void OnMultiplayerBtnClicked()
         {
             _mainMenuManager.ChangeState(MainMenuStateType.NetworkSettings);
         }
 
-        private void OnSettingsButtonClicked()
+        private void OnSettingsBtnClicked()
         {
             _mainMenuManager.ChangeState(MainMenuStateType.Settings);
         }
 
-        private void OnExitButtonClicked()
+        private void OnExitBtnClicked()
         {
             Application.Quit();
         }

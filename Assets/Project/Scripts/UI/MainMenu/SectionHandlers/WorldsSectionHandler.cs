@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
     [Serializable]
-    public class PlayersSectionHandler : SlotsSectionHandlerBase<UIPlayerSlot>
+    public class WorldsSectionHandler : SlotsSectionHandlerBase<UIWorldSlot>
     {
         #region Fields
 
@@ -24,7 +24,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         public override void CreateSlot(object slotData)
         {
             var newSlot = GameObject.Instantiate(_slotPrefab, _slotsContainer);
-            newSlot.SetData(null, "New World", "New Stats");
+            newSlot.SetData(null, "Player Name", "Palyer Stats");
             newSlot.SelectBtnClicked += SlotSelectBtnClickedHandler;
             newSlot.RemoveBtnClicked += SlotRemoveBtnClickedHandler;
             newSlot.PinBtnClicked += SlotPinBtnClickedHandler;
@@ -46,7 +46,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 
         protected override void SlotSelectBtnClickedHandler(UISlotBase slot)
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.WorldSelection);
+            _mainMenuManager.ChangeState(MainMenuStateType.MainMenu);
         }
         #endregion
     }

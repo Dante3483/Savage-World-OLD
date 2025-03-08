@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 7548903729511968867}
   - component: {fileID: 5468162918312463337}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,6 +1102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77fbe9c0218add469ac80f1e3da08b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _avatarImage: {fileID: 5013790568669776275}
+  _nameText: {fileID: 4272636871950389162}
+  _statsText: {fileID: 5149814045839716643}
+  _selectBtn: {fileID: 276786264093152859}
+  _removeBtn: {fileID: 2238075971390866597}
+  _pinBtn: {fileID: 2468110267967364711}
 --- !u!1 &7441180919354624378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1411,7 @@ GameObject:
   - component: {fileID: 3485214091419450414}
   - component: {fileID: 2238075971390866597}
   m_Layer: 5
-  m_Name: Delete
+  m_Name: Remove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,7 +15,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #endregion
 
         #region Public Methods
-        public void SetManager(MainMenuManager mainMenuManager)
+        public virtual void Initialize(MainMenuManager mainMenuManager)
         {
             _mainMenuManager = mainMenuManager;
         }
