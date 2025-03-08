@@ -1119,8 +1119,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3253891590267263687}
   - component: {fileID: 889387939316385743}
+  - component: {fileID: 2143458748370486813}
   m_Layer: 5
-  m_Name: World
+  m_Name: WorldSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,6 +1175,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2143458748370486813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525772805035491021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 793d1b18e9ea8be4a979898087aea3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6644335826121360993
 GameObject:
   m_ObjectHideFlags: 0

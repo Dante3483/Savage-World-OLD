@@ -22,12 +22,12 @@ namespace SavageWorld.Runtime.UI.MainMenu.States
 
         public override void Enter()
         {
-            throw new System.NotImplementedException();
+            UIManager.Instance.MainMenuStore.MainPanel.Show();
         }
 
         public override void Exit()
         {
-            throw new System.NotImplementedException();
+            UIManager.Instance.MainMenuStore.MainPanel.Hide();
         }
         #endregion
 

@@ -16,6 +16,9 @@ namespace SavageWorld.Runtime.UI.MainMenu
 
         [SerializeField]
         private MultiplayerSectionHandler _multiplayerSectionHandler;
+
+        [SerializeField]
+        private PlayersSectionHandler _playersSectionHandler;
         #endregion
 
         #region Properties
@@ -44,12 +47,14 @@ namespace SavageWorld.Runtime.UI.MainMenu
         {
             _starterSectionHandler.AddListeners();
             _multiplayerSectionHandler.AddListeners();
+            _playersSectionHandler.AddListeners();
         }
 
         private void OnDisable()
         {
             _starterSectionHandler.RemoveListeners();
             _multiplayerSectionHandler.RemoveListeners();
+            _playersSectionHandler.RemoveListeners();
         }
         #endregion
 
