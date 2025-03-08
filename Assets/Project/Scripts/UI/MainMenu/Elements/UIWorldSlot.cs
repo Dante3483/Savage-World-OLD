@@ -18,7 +18,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.Elements
         #endregion
 
         #region Properties
-
+        public string Name => _nameText.text;
         #endregion
 
         #region Events / Delegates

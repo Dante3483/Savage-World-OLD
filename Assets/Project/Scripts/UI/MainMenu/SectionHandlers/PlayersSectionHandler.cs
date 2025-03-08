@@ -1,4 +1,5 @@
 using System;
+using SavageWorld.Runtime.Core;
 using SavageWorld.Runtime.Enums.StateMachine;
 using SavageWorld.Runtime.UI.MainMenu.Elements;
 using UnityEngine;
@@ -24,7 +25,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         public override void CreateSlot(object slotData)
         {
             var newSlot = GameObject.Instantiate(_slotPrefab, _slotsContainer);
-            newSlot.SetData(null, "New World", "New Stats");
+            newSlot.SetData(null, "Player Name", "Player Stats");
             newSlot.SelectBtnClicked += SlotSelectBtnClickedHandler;
             newSlot.RemoveBtnClicked += SlotRemoveBtnClickedHandler;
             newSlot.PinBtnClicked += SlotPinBtnClickedHandler;
@@ -46,6 +47,8 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 
         protected override void SlotSelectBtnClickedHandler(UISlotBase slot)
         {
+            var playerSlot = slot as UIPlayerSlot;
+            GameManager.Instance.CurrentGameSession.PlayerInfo.Name = playerSlot.Name;
             _mainMenuManager.ChangeState(MainMenuStateType.WorldSelection);
         }
         #endregion
