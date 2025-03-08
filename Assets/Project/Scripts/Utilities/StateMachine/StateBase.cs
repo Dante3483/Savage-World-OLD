@@ -1,6 +1,6 @@
 namespace SavageWorld.Runtime.Utilities.StateMachine
 {
-    public abstract class BaseState : IState
+    public abstract class StateBase : IState
     {
         #region Fields
 
