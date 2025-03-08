@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1232232568}
+      - m_Target: {fileID: 553573699}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1514,15 +1514,15 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 553573699}
+      - m_Target: {fileID: 1032880601}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3356,6 +3356,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86108362a9172e54189350b1c9a9a7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _starterSectionHandler:
+    _singlePlayerBtn: {fileID: 551104161}
+    _multiplayerBtn: {fileID: 2050092920}
+    _settingsBtn: {fileID: 1542736133}
+    _exitBtn: {fileID: 364785171}
+  _multiplayerSectionHandler:
+    _connectViaIPBtn: {fileID: 1568717258}
+    _hostAndPlayBtn: {fileID: 267607611}
 --- !u!1 &1045093801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,7 +3959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232232569}
   m_Layer: 5
-  m_Name: Starter
+  m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

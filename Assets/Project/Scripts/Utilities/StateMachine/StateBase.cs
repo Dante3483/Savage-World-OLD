@@ -3,7 +3,7 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
     public abstract class StateBase : IState
     {
         #region Fields
-
+        protected IStateMachine _stateMachine;
         #endregion
 
         #region Properties
@@ -15,6 +15,11 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
         #endregion
 
         #region Public Methods
+        public StateBase(IStateMachine stateMachine)
+        {
+            _stateMachine = stateMachine;
+        }
+
         public abstract void Enter();
 
         public abstract void Exit();

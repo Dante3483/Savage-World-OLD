@@ -17,6 +17,9 @@ namespace SavageWorld.Runtime.UI.MainMenu.States
         #endregion
 
         #region Public Methods
+        public WorldSelectionState(IStateMachine stateMachine)
+            : base(stateMachine) { }
+
         public override void Enter()
         {
             throw new System.NotImplementedException();
