@@ -1,0 +1,13 @@
+namespace #NAMESPACE#
+{
+    public interface #SCRIPTNAME#
+    {
+        #region Properties
+
+        #endregion
+
+        #region Public Methods
+
+        #endregion
+    }
+}

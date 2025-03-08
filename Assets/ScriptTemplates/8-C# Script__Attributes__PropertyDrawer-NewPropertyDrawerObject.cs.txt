@@ -1,0 +1,37 @@
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace #NAMESPACE#
+{
+    public class #SCRIPTNAME# : PropertyDrawer
+    {
+        #region Fields
+
+        #endregion
+
+        #region Properties
+
+        #endregion
+
+        #region Events / Delegates
+
+        #endregion
+
+        #region Monobehaviour Methods
+
+        #endregion
+
+        #region Public Methods
+        public override VisualElement CreatePropertyGUI(SerializedProperty property)
+        {
+            VisualElement _root = new VisualElement();
+            return _root;
+        }
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+    }
+}

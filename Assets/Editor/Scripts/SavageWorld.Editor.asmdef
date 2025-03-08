@@ -1,6 +1,6 @@
 {
     "name": "SavageWorld.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "SavageWorld.Editor",
     "references": [
         "GUID:9a09dc157f3d3bf43b95e1eb529257e9"
     ],

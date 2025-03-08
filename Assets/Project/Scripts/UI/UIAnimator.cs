@@ -8,11 +8,12 @@ namespace SavageWorld.Runtime.UI
         #region Fields
         [SerializeField]
         private Sprite[] _sprites;
+
         [SerializeField]
         private float _timeToSetNewSprite;
+
         [SerializeField]
         private bool _loop = true;
-
         private int _index = 0;
         private Image _image;
         private float _time = 0;

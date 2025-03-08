@@ -1,0 +1,30 @@
+using UnityEngine;
+
+namespace #NAMESPACE#
+{
+    public class #SCRIPTNAME# : PropertyAttribute
+    {
+        #region Fields
+
+        #endregion
+
+        #region Properties
+
+        #endregion
+
+        #region Events / Delegates
+
+        #endregion
+
+        #region Public Methods
+        public #SCRIPTNAME#()
+        {
+
+        }
+        #endregion
+
+        #region Private Methods
+
+        #endregion
+    }
+}
