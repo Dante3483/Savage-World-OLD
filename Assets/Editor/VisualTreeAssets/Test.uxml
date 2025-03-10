@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/Styles/SerializableDictionaryStyle.uss?fileID=7433441132597879392&amp;guid=3f0b3341397016940aa98e527c3f127f&amp;type=3#SerializableDictionaryStyle" />
+    <ui:Foldout text="Foldout">
+        <SavageWorld.Editor.VisualElements.SerializableDictionaryElement />
+    </ui:Foldout>
+</ui:UXML>

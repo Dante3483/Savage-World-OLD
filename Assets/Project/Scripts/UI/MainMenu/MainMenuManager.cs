@@ -11,17 +11,17 @@ namespace SavageWorld.Runtime.UI.MainMenu
         #region Fields
         private IStateMachine _stateMachine = new StateMachineWithHistory();
 
-        [SerializeField]
-        private StarterSectionHandler _starterSectionHandler;
+        [SerializeReference]
+        private SectionHandlerBase _initialSectionHandler = new InitialSectionHandler();
 
-        [SerializeField]
-        private MultiplayerSectionHandler _multiplayerSectionHandler;
+        [SerializeReference]
+        private SectionHandlerBase _multiplayerSectionHandler = new MultiplayerSectionHandler();
 
-        [SerializeField]
-        private PlayersSectionHandler _playersSectionHandler;
+        [SerializeReference]
+        private SectionHandlerBase _playersSectionHandler = new PlayersSectionHandler();
 
-        [SerializeField]
-        private WorldsSectionHandler _worldSelectionSectionHandler;
+        [SerializeReference]
+        private SectionHandlerBase _worldSelectionSectionHandler = new WorldsSectionHandler();
         #endregion
 
         #region Properties
@@ -35,21 +35,13 @@ namespace SavageWorld.Runtime.UI.MainMenu
         #region Monobehaviour Methods
         private void Awake()
         {
-            _starterSectionHandler.Initialize(this);
-            _multiplayerSectionHandler.Initialize(this);
-            _playersSectionHandler.Initialize(this);
-            _worldSelectionSectionHandler.Initialize(this);
-        }
-
-        private void Start()
-        {
+            InitializeHandlers();
             RegisterStates();
-            ChangeState(MainMenuStateType.MainMenu);
         }
 
         private void OnEnable()
         {
-            _starterSectionHandler.AddListeners();
+            _initialSectionHandler.AddListeners();
             _multiplayerSectionHandler.AddListeners();
             _playersSectionHandler.AddListeners();
             _worldSelectionSectionHandler.AddListeners();
@@ -57,7 +49,7 @@ namespace SavageWorld.Runtime.UI.MainMenu
 
         private void OnDisable()
         {
-            _starterSectionHandler.RemoveListeners();
+            _initialSectionHandler.RemoveListeners();
             _multiplayerSectionHandler.RemoveListeners();
             _playersSectionHandler.RemoveListeners();
             _worldSelectionSectionHandler.RemoveListeners();
@@ -65,9 +57,14 @@ namespace SavageWorld.Runtime.UI.MainMenu
         #endregion
 
         #region Public Methods
-        public void ChangeState(MainMenuStateType newState)
+        public void ChangeState(MainMenuStates newState)
         {
             _stateMachine.ChangeState((int)newState);
+        }
+
+        public void ResetStateMachine()
+        {
+            _stateMachine.Reset();
         }
 
         public void GoBack()
@@ -80,34 +77,42 @@ namespace SavageWorld.Runtime.UI.MainMenu
         #endregion
 
         #region Private Methods
+        private void InitializeHandlers()
+        {
+            _initialSectionHandler.Initialize(this);
+            _multiplayerSectionHandler.Initialize(this);
+            _playersSectionHandler.Initialize(this);
+            _worldSelectionSectionHandler.Initialize(this);
+        }
+
         private void RegisterStates()
         {
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.MainMenu,
-                new MainMenuState(_stateMachine)
+                (int)MainMenuStates.Initial,
+                new InitialState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.PlayerSelection,
+                (int)MainMenuStates.PlayerSelection,
                 new PlayerSelectionState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.WorldSelection,
+                (int)MainMenuStates.WorldSelection,
                 new WorldSelectionState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.NetworkSettings,
+                (int)MainMenuStates.NetworkSettings,
                 new NetworkSettingsState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.ConnectViaIP,
+                (int)MainMenuStates.ConnectViaIP,
                 new ConnectViaIPState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.HostAndPlay,
+                (int)MainMenuStates.HostAndPlay,
                 new HostAndPlayState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStateType.Settings,
+                (int)MainMenuStates.Settings,
                 new SettingsState(_stateMachine)
             );
         }

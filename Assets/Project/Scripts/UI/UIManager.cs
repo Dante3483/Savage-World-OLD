@@ -9,7 +9,6 @@ namespace SavageWorld.Runtime.UI
         #region Fields
         [SerializeField]
         private MainMenuStore _mainMenuStore;
-
         #endregion
 
         #region Properties

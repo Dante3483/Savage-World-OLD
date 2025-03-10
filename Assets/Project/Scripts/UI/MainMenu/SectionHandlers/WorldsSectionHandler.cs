@@ -34,6 +34,11 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #endregion
 
         #region Private Methods
+        protected override void OnCreateBtnClicked()
+        {
+            GameManager.Instance.ChangeState(GameStates.WorldCreation);
+        }
+
         protected override void SlotPinBtnClickedHandler(UISlotBase slot)
         {
             Debug.Log("NEED IMPLEMENT SLOT PIN");
@@ -48,8 +53,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         protected override void SlotSelectBtnClickedHandler(UISlotBase slot)
         {
             var worldSlot = slot as UIWorldSlot;
-            GameManager.Instance.CurrentGameSession.WorldInfo.Name = worldSlot.Name;
-            _mainMenuManager.ChangeState(MainMenuStateType.MainMenu);
+            GameManager.Instance.CurrentSession.WorldInfo.Name = worldSlot.Name;
         }
         #endregion
     }

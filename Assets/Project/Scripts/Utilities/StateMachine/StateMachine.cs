@@ -5,7 +5,7 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
     public class StateMachine : IStateMachine
     {
         #region Fields
-        private readonly Dictionary<int, IState> _states = new();
+        private Dictionary<int, IState> _states = new();
         private IState _currentState;
         #endregion
 
@@ -38,6 +38,12 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
             return true;
         }
 
+        public virtual void Reset()
+        {
+            _currentState?.Exit();
+            _currentState = null;
+        }
+
         public virtual void FixedUpdate()
         {
             _currentState?.FixedUpdate();
@@ -47,6 +53,7 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
         {
             _currentState?.Update();
         }
+
         #endregion
 
         #region Private Methods

@@ -47,12 +47,12 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #region Private Methods
         private void OnConnectViaIPBtnClicked()
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.ConnectViaIP);
+            _mainMenuManager.ChangeState(MainMenuStates.ConnectViaIP);
         }
 
         private void OnHostAndPlayBtnClicked()
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.PlayerSelection);
+            _mainMenuManager.ChangeState(MainMenuStates.PlayerSelection);
         }
 
         private void OnBackBtnClicked()

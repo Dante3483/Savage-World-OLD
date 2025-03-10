@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d347b4e4b6010944941658361fdbf7a, type: 3}
+  m_Name: Common
+  m_EditorClassIdentifier: 
+  _disableAll: 0
+  _enableAll: 0
+  _flatWorldGeneration: 1
+  _landscapeGeneration: 1
+  _biomesGeneration: 1
+  _clustersGeneration: 1
+  _cavesGeneration: 1
+  _starterCavesGeneration: 1
+  _lakesGeneration: 1
+  _oasisesGeneration: 1
+  _grassSeeding: 1
+  _plantsGeneration: 1
+  _treesGeneration: 1
+  _pickUpItemsGeneration: 1
+  _setRandomTiles: 1
+  _blockProcessing: 1
+  _setPhysicsShapes: 1
+  _layers:
+    _count: 4
+    _items:
+    - _name: Air
+      _key: 0
+      _value: {fileID: 11400000, guid: c32b6dc13e608e146a76c4f725905308, type: 2}
+      _isValid: 1
+    - _name: Surface
+      _key: 1
+      _value: {fileID: 11400000, guid: d567690693b9ce0438659cda99da2fd3, type: 2}
+      _isValid: 1
+    - _name: Underground
+      _key: 2
+      _value: {fileID: 11400000, guid: 2911879378e137c4ca734374c529d228, type: 2}
+      _isValid: 1
+    - _name: Caverns
+      _key: 3
+      _value: {fileID: 11400000, guid: 3ecc9b71de6a57d4180a719504678719, type: 2}
+      _isValid: 1

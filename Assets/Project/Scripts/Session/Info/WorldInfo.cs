@@ -14,10 +14,10 @@ namespace SavageWorld.Runtime.Session.Info
         private int _seed;
 
         [SerializeField]
-        private int _currentWorldWidth;
+        private int _width;
 
         [SerializeField]
-        private int _currentWorldHeight;
+        private int _height;
         #endregion
 
         #region Properties
@@ -31,15 +31,15 @@ namespace SavageWorld.Runtime.Session.Info
             get => _seed;
             set => _seed = value;
         }
-        public int CurrentWorldWidth
+        public int Width
         {
-            get => _currentWorldWidth;
-            set => _currentWorldWidth = value;
+            get => _width;
+            set => _width = value;
         }
-        public int CurrentWorldHeight
+        public int Height
         {
-            get => _currentWorldHeight;
-            set => _currentWorldHeight = value;
+            get => _height;
+            set => _height = value;
         }
         #endregion
 

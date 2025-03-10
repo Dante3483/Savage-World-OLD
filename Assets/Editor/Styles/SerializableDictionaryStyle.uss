@@ -1,0 +1,13 @@
+.unity-multi-column-header__column__title {
+    -unity-text-align: upper-center;
+}
+
+.unity-multi-column-view__cell {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.serializable-dictionary__cell__valid {
+    align-self: center;
+}

@@ -1,8 +1,10 @@
+using System.Threading.Tasks;
+using SavageWorld.Runtime.UI;
 using SavageWorld.Runtime.Utilities.StateMachine;
 
-namespace SavageWorld.Runtime.UI.MainMenu.States
+namespace SavageWorld.Runtime.Core.States
 {
-    public class MainMenuState : StateBase
+    public class WorldCreationState : StateBase
     {
         #region Fields
 
@@ -17,17 +19,18 @@ namespace SavageWorld.Runtime.UI.MainMenu.States
         #endregion
 
         #region Public Methods
-        public MainMenuState(IStateMachine stateMachine)
+        public WorldCreationState(IStateMachine stateMachine)
             : base(stateMachine) { }
 
         public override void Enter()
         {
-            UIManager.Instance.MainMenuStore.MainPanel.Show();
+            UIManager.Instance.MainMenuStore.LoadingPanel.Show();
+            Task.Run(() => GameManager.Instance.WorldBuilder.GenerateWorld());
         }
 
         public override void Exit()
         {
-            UIManager.Instance.MainMenuStore.MainPanel.Hide();
+            UIManager.Instance.MainMenuStore.LoadingPanel.Hide();
         }
         #endregion
 

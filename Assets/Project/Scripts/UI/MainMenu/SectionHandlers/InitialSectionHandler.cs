@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
     [Serializable]
-    public class StarterSectionHandler : SectionHandlerBase
+    public class InitialSectionHandler : SectionHandlerBase
     {
         #region Fields
         [SerializeField]
@@ -52,17 +52,17 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #region Private Methods
         private void OnSinglePlayerBtnClicked()
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.PlayerSelection);
+            _mainMenuManager.ChangeState(MainMenuStates.PlayerSelection);
         }
 
         private void OnMultiplayerBtnClicked()
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.NetworkSettings);
+            _mainMenuManager.ChangeState(MainMenuStates.NetworkSettings);
         }
 
         private void OnSettingsBtnClicked()
         {
-            _mainMenuManager.ChangeState(MainMenuStateType.Settings);
+            _mainMenuManager.ChangeState(MainMenuStates.Settings);
         }
 
         private void OnExitBtnClicked()

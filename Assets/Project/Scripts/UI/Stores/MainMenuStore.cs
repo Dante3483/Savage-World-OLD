@@ -9,7 +9,7 @@ namespace SavageWorld.Runtime.UI.Stores
     {
         #region Fields
         [SerializeField]
-        private UIPanel _mainPanel;
+        private UIPanel _initialPanel;
 
         [SerializeField]
         private UIPanel _networkSettingsPanel;
@@ -28,13 +28,19 @@ namespace SavageWorld.Runtime.UI.Stores
 
         [SerializeField]
         private UIPanel _hostAndPlayPanel;
+
+        [SerializeField]
+        private UIPanel _loadingPanel;
+
+        [SerializeField]
+        private UIProgressBar _loadingProgressBar;
         #endregion
 
         #region Properties
-        public UIPanel MainPanel
+        public UIPanel InitialPanel
         {
-            get => _mainPanel;
-            set => _mainPanel = value;
+            get => _initialPanel;
+            set => _initialPanel = value;
         }
         public UIPanel NetworkSettingsPanel
         {
@@ -65,6 +71,16 @@ namespace SavageWorld.Runtime.UI.Stores
         {
             get => _hostAndPlayPanel;
             set => _hostAndPlayPanel = value;
+        }
+        public UIPanel LoadingPanel
+        {
+            get => _loadingPanel;
+            set => _loadingPanel = value;
+        }
+        public UIProgressBar LoadingProgressBar
+        {
+            get => _loadingProgressBar;
+            set => _loadingProgressBar = value;
         }
         #endregion
 

@@ -5,7 +5,7 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
     public class StateMachineWithHistory : StateMachine
     {
         #region Fields
-        private readonly Stack<int> _stateHistory = new();
+        private Stack<int> _stateHistory = new();
         private int _currentStateId = -1;
         #endregion
 
@@ -30,6 +30,12 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
                 return true;
             }
             return false;
+        }
+
+        public override void Reset()
+        {
+            base.Reset();
+            _stateHistory.Clear();
         }
 
         public void GoBack()

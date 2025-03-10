@@ -9,7 +9,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         where TPrefabValue : UISlotBase
     {
         #region Fields
-        protected readonly List<UISlotBase> _slots = new();
+        protected List<UISlotBase> _slots = new();
 
         [SerializeField]
         protected TPrefabValue _slotPrefab;
@@ -72,15 +72,12 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #endregion
 
         #region Private Methods
-        private void OnCreateBtnClicked()
-        {
-            CreateSlot(null);
-        }
-
         private void OnBackBtnClicked()
         {
             _mainMenuManager.GoBack();
         }
+
+        protected abstract void OnCreateBtnClicked();
 
         protected abstract void SlotSelectBtnClickedHandler(UISlotBase slot);
 

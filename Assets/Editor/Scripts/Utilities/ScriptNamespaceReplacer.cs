@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Compilation;
 
-namespace SavageWorld.Editor
+namespace SavageWorld.Editor.Utilities
 {
     public class ScriptNamespaceReplacer : AssetModificationProcessor
     {

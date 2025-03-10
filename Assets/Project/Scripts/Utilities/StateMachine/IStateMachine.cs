@@ -11,6 +11,8 @@ namespace SavageWorld.Runtime.Utilities.StateMachine
 
         public bool ChangeState(int stateId);
 
+        public void Reset();
+
         public void Update();
 
         public void FixedUpdate();
