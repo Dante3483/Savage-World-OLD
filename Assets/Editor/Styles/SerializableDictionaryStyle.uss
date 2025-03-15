@@ -1,11 +1,50 @@
+.unity-multi-column-header__column {
+    border-left-color: rgb(70, 70, 70);
+    border-right-color: rgb(70, 70, 70);
+    border-top-color: rgb(70, 70, 70);
+    border-bottom-color: rgb(70, 70, 70);
+    background-color: rgb(43, 43, 43);
+}
+
 .unity-multi-column-header__column__title {
-    -unity-text-align: upper-center;
+    -unity-text-align: middle-center;
+    align-self: center;
+    flex-direction: row;
+}
+
+.unity-multi-column-header__column__default-content {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .unity-multi-column-view__cell {
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 5px;
+    align-items: center;
+    border-left-color: rgb(60, 60, 60);
+    border-right-color: rgb(60, 60, 60);
+    border-top-color: rgb(60, 60, 60);
+    border-bottom-color: rgb(60, 60, 60);
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    padding-left: 2px;
+    padding-right: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.serializable-dictionary__cell__key {
+    align-self: stretch;
+}
+
+.serializable-dictionary__cell__value {
+    align-self: stretch;
+}
+
+.serializable-dictionary__cell__value > Toggle {
+    align-self: center;
 }
 
 .serializable-dictionary__cell__valid {

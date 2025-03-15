@@ -1,0 +1,15 @@
+.type-selector__container {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.type-selector__button {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+}
+
+.type-selector__property__field {
+    margin-left: 10px;
+    align-self: center;
+}

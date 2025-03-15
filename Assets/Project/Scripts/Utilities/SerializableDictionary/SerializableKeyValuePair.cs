@@ -8,10 +8,6 @@ namespace SavageWorld.Runtime.Utilities.SerializableDictionary
     {
         #region Fields
         [SerializeField]
-        [HideInInspector]
-        private string _name;
-
-        [SerializeField]
         [SerializeReference]
         private TKey _key;
 
@@ -21,7 +17,6 @@ namespace SavageWorld.Runtime.Utilities.SerializableDictionary
 
         [SerializeField]
         private bool _isValid;
-
         #endregion
 
         #region Properties
@@ -49,7 +44,6 @@ namespace SavageWorld.Runtime.Utilities.SerializableDictionary
             _key = key;
             _value = value;
             _isValid = isValid;
-            _name = key.ToString();
         }
         #endregion
 

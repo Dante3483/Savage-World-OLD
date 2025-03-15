@@ -1,6 +1,5 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/Styles/TypeSelectorStyle.uss?fileID=7433441132597879392&amp;guid=b0e1e300208621d4ea01c699fe424b7e&amp;type=3#TypeSelectorStyle" />
     <Style src="project://database/Assets/Editor/Styles/SerializableDictionaryStyle.uss?fileID=7433441132597879392&amp;guid=3f0b3341397016940aa98e527c3f127f&amp;type=3#SerializableDictionaryStyle" />
-    <ui:Foldout text="Foldout">
-        <SavageWorld.Editor.VisualElements.SerializableDictionaryElement />
-    </ui:Foldout>
+    <ui:MultiColumnListView show-foldout-header="true" allow-add="true" allow-remove="true" show-bound-collection-size="true" />
 </ui:UXML>

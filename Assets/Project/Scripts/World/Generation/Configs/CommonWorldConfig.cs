@@ -1,6 +1,7 @@
 using SavageWorld.Runtime.Enums.World;
 using SavageWorld.Runtime.Utilities.SerializableDictionary;
 using SavageWorld.Runtime.World.Elements;
+using SavageWorld.Runtime.World.Generation.Phases;
 using UnityEngine;
 
 namespace SavageWorld.Runtime.World.Generation.Configs
@@ -12,6 +13,9 @@ namespace SavageWorld.Runtime.World.Generation.Configs
         //TODO: Make it more generic to remove hardcode parts
         //Maybe use custome editor for this
         [Header("Statuses")]
+        [SerializeField]
+        private SerializableDictionary<WorldGenerationPhaseBase, bool> _phases;
+
         [SerializeField]
         private bool _disableAll;
 
