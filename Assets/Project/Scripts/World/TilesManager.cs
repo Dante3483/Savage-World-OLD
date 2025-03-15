@@ -1,6 +1,8 @@
+using System.Diagnostics;
 using System.Threading.Tasks;
 using SavageWorld.Runtime.Core;
 using SavageWorld.Runtime.Utilities.Singleton;
+using Debug = UnityEngine.Debug;
 
 namespace SavageWorld.Runtime.World
 {
@@ -8,6 +10,8 @@ namespace SavageWorld.Runtime.World
     {
         #region Fields
         private Tile[,] _grid;
+        private int _width;
+        private int _height;
         #endregion
 
         #region Properties
@@ -25,33 +29,25 @@ namespace SavageWorld.Runtime.World
         #region Public Methods
         public void Initialize()
         {
-            //_setOfCollidersPositions = new();
-            //TerrainConfigurationSO terrainConfiguration = _gameManager.TerrainConfiguration;
-            //int terrainWidth = terrainConfiguration.TerrainWidth;
-            //int terrainHeight = terrainConfiguration.TerrainHeight;
+            var stopwatch = Stopwatch.StartNew();
             var worldInfo = GameManager.Instance.CurrentSession.WorldInfo;
-            var width = worldInfo.Width;
-            var height = worldInfo.Height;
-            _grid = new Tile[width, height];
-            Tile emptyData = Tile.GetEmpty();
-            //GameConsole.Log($"Size of world cell data: {Marshal.SizeOf(emptyData)}");
-            Parallel.For(
-                0,
-                width,
-                (index) =>
-                {
-                    int x = index;
-                    for (int y = 0; y < height; y++)
-                    {
-                        _grid[x, y] = Tile.GetEmpty();
-                    }
-                }
-            );
+            _width = worldInfo.Width;
+            _height = worldInfo.Height;
+            _grid = new Tile[_width, _height];
+            Parallel.For(0, _width, InitializeColumn);
+            stopwatch.Stop();
+            Debug.Log($"Initialization {stopwatch.Elapsed}");
         }
         #endregion
 
         #region Private Methods
-
+        private void InitializeColumn(int x)
+        {
+            for (int y = 0; y < _height; y++)
+            {
+                _grid[x, y] = Tile.GetEmpty();
+            }
+        }
         #endregion
     }
 }

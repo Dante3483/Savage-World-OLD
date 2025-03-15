@@ -57,7 +57,7 @@ namespace SavageWorld.Runtime.UI.MainMenu
         #endregion
 
         #region Public Methods
-        public void ChangeState(MainMenuStates newState)
+        public void ChangeState(MainMenuStateType newState)
         {
             _stateMachine.ChangeState((int)newState);
         }
@@ -88,31 +88,31 @@ namespace SavageWorld.Runtime.UI.MainMenu
         private void RegisterStates()
         {
             _stateMachine.RegisterState(
-                (int)MainMenuStates.Initial,
+                (int)MainMenuStateType.Initial,
                 new InitialState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.PlayerSelection,
+                (int)MainMenuStateType.PlayerSelection,
                 new PlayerSelectionState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.WorldSelection,
+                (int)MainMenuStateType.WorldSelection,
                 new WorldSelectionState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.NetworkSettings,
+                (int)MainMenuStateType.NetworkSettings,
                 new NetworkSettingsState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.ConnectViaIP,
+                (int)MainMenuStateType.ConnectViaIP,
                 new ConnectViaIPState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.HostAndPlay,
+                (int)MainMenuStateType.HostAndPlay,
                 new HostAndPlayState(_stateMachine)
             );
             _stateMachine.RegisterState(
-                (int)MainMenuStates.Settings,
+                (int)MainMenuStateType.Settings,
                 new SettingsState(_stateMachine)
             );
         }

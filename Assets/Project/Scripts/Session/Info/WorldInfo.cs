@@ -1,4 +1,5 @@
 using System;
+using SavageWorld.Runtime.World.Generation;
 using UnityEngine;
 
 namespace SavageWorld.Runtime.Session.Info
@@ -7,6 +8,10 @@ namespace SavageWorld.Runtime.Session.Info
     public class WorldInfo
     {
         #region Fields
+        //TODO: Split info in different classes (WorldSizeConfig, WorldGenerationConfig, etc)
+        [SerializeField]
+        private WorldConfig _config;
+
         [SerializeField]
         private string _name;
 
@@ -40,6 +45,11 @@ namespace SavageWorld.Runtime.Session.Info
         {
             get => _height;
             set => _height = value;
+        }
+        public WorldConfig Config
+        {
+            get => _config;
+            set => _config = value;
         }
         #endregion
 

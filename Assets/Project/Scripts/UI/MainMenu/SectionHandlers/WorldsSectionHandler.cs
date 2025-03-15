@@ -36,7 +36,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         #region Private Methods
         protected override void OnCreateBtnClicked()
         {
-            GameManager.Instance.ChangeState(GameStates.WorldCreation);
+            GameManager.Instance.ChangeState(GameStateType.WorldCreation);
         }
 
         protected override void SlotPinBtnClickedHandler(UISlotBase slot)

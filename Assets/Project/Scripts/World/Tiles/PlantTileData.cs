@@ -1,13 +1,13 @@
+using SavageWorld.Runtime.Enums.World;
 using UnityEngine;
 
-namespace SavageWorld.Runtime.World.Elements
+namespace SavageWorld.Runtime.World.Tiles
 {
-    [CreateAssetMenu(fileName = "NewLayerData", menuName = "World/Layer data")]
-    public class LayerData : ScriptableObject
+    [CreateAssetMenu(fileName = "NewPlantTileData", menuName = "World/Tiles/Plant")]
+    public class PlantTileData : TileDataBase<PlantTileId>
     {
         #region Fields
-        [SerializeField]
-        private int _height;
+
         #endregion
 
         #region Properties
@@ -27,7 +27,10 @@ namespace SavageWorld.Runtime.World.Elements
         #endregion
 
         #region Private Methods
-
+        protected override TileType GetDefaultType()
+        {
+            return TileType.Plant;
+        }
         #endregion
     }
 }

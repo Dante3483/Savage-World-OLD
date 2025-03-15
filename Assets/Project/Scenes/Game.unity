@@ -4548,6 +4548,8 @@ MonoBehaviour:
       _seed: 0
       _width: 0
       _height: 0
+      _config: {fileID: 0}
+  _worldConfig: {fileID: 11400000, guid: 00089b763309f4d46af7447e0003c9ba, type: 2}
 --- !u!1 &1584720087
 GameObject:
   m_ObjectHideFlags: 0

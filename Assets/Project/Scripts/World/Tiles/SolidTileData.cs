@@ -1,8 +1,10 @@
+using SavageWorld.Runtime.Enums.World;
 using UnityEngine;
 
-namespace SavageWorld.Runtime.World.Generation.Configs
+namespace SavageWorld.Runtime.World.Tiles
 {
-    public abstract class WorldConfigBase : ScriptableObject
+    [CreateAssetMenu(fileName = "NewSolidTileData", menuName = "World/Tiles/Solid")]
+    public class SolidTileData : TileDataBase<SolidTileId>
     {
         #region Fields
 
@@ -25,7 +27,10 @@ namespace SavageWorld.Runtime.World.Generation.Configs
         #endregion
 
         #region Private Methods
-
+        protected override TileType GetDefaultType()
+        {
+            return TileType.Solid;
+        }
         #endregion
     }
 }

@@ -1,6 +1,6 @@
 namespace SavageWorld.Runtime.Enums.StateMachine
 {
-    public enum GameStates : byte
+    public enum GameStateType : byte
     {
         Initialization = 0,
         MainMenu = 1,

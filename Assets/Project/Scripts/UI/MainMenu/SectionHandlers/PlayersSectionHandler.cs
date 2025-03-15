@@ -54,7 +54,7 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
         {
             var playerSlot = slot as UIPlayerSlot;
             GameManager.Instance.CurrentSession.PlayerInfo.Name = playerSlot.Name;
-            _mainMenuManager.ChangeState(MainMenuStates.WorldSelection);
+            _mainMenuManager.ChangeState(MainMenuStateType.WorldSelection);
         }
         #endregion
     }

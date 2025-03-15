@@ -23,7 +23,9 @@ namespace SavageWorld.Runtime.Core.States
 
         public override void Enter()
         {
-            GameManager.Instance.ManagersStore.MainMenuManager.ChangeState(MainMenuStates.Initial);
+            GameManager.Instance.ManagersStore.MainMenuManager.ChangeState(
+                Enums.StateMachine.MainMenuStateType.Initial
+            );
         }
 
         public override void Exit()

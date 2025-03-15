@@ -4,6 +4,7 @@ using SavageWorld.Runtime.Session;
 using SavageWorld.Runtime.Utilities.Singleton;
 using SavageWorld.Runtime.Utilities.StateMachine;
 using SavageWorld.Runtime.World;
+using SavageWorld.Runtime.World.Generation;
 using UnityEngine;
 
 namespace SavageWorld.Runtime.Core
@@ -18,6 +19,10 @@ namespace SavageWorld.Runtime.Core
         private GameSession _currentSession;
         private IStateMachine _stateMachine = new StateMachine();
         private WorldBuilder _worldBuilder = new();
+
+        //REMOVE
+        [SerializeField]
+        private WorldConfig _worldConfig;
         #endregion
 
         #region Properties
@@ -36,6 +41,11 @@ namespace SavageWorld.Runtime.Core
             get => _worldBuilder;
             set => _worldBuilder = value;
         }
+        public WorldConfig WorldConfig
+        {
+            get => _worldConfig;
+            set => _worldConfig = value;
+        }
         #endregion
 
         #region Events / Delegates
@@ -46,12 +56,12 @@ namespace SavageWorld.Runtime.Core
         private void Start()
         {
             RegisterStates();
-            ChangeState(GameStates.Initialization);
+            ChangeState(GameStateType.Initialization);
         }
         #endregion
 
         #region Public Methods
-        public void ChangeState(GameStates newState)
+        public void ChangeState(GameStateType newState)
         {
             _stateMachine.ChangeState((int)newState);
         }
@@ -61,13 +71,20 @@ namespace SavageWorld.Runtime.Core
         private void RegisterStates()
         {
             _stateMachine.RegisterState(
-                (int)GameStates.Initialization,
+                (int)GameStateType.Initialization,
                 new InitializationState(_stateMachine)
             );
-            _stateMachine.RegisterState((int)GameStates.MainMenu, new MainMenuState(_stateMachine));
             _stateMachine.RegisterState(
-                (int)GameStates.WorldCreation,
+                (int)GameStateType.MainMenu,
+                new MainMenuState(_stateMachine)
+            );
+            _stateMachine.RegisterState(
+                (int)GameStateType.WorldCreation,
                 new WorldCreationState(_stateMachine)
+            );
+            _stateMachine.RegisterState(
+                (int)GameStateType.Gameplay,
+                new GameplayState(_stateMachine)
             );
         }
         #endregion

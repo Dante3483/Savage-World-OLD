@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
+using SavageWorld.Runtime.Enums.StateMachine;
 using SavageWorld.Runtime.UI;
+using SavageWorld.Runtime.Utilities;
 using SavageWorld.Runtime.Utilities.StateMachine;
 
 namespace SavageWorld.Runtime.Core.States
@@ -25,7 +27,7 @@ namespace SavageWorld.Runtime.Core.States
         public override void Enter()
         {
             UIManager.Instance.MainMenuStore.LoadingPanel.Show();
-            Task.Run(() => GameManager.Instance.WorldBuilder.GenerateWorld());
+            Task.Run(StartCreation);
         }
 
         public override void Exit()
@@ -35,7 +37,16 @@ namespace SavageWorld.Runtime.Core.States
         #endregion
 
         #region Private Methods
+        private void StartCreation()
+        {
+            GameManager.Instance.WorldBuilder.GenerateWorld(GameManager.Instance.WorldConfig);
+            MainThread.Instance.Execute(CompleteCreation);
+        }
 
+        private void CompleteCreation()
+        {
+            GameManager.Instance.ChangeState(GameStateType.Gameplay);
+        }
         #endregion
     }
 }

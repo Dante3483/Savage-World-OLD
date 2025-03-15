@@ -1,8 +1,8 @@
 namespace SavageWorld.Runtime.Enums.World
 {
-    public enum Layers : byte
+    public enum LayerType : byte
     {
-        Air = 0,
+        Sky = 0,
         Surface = 1,
         Underground = 2,
         Caverns = 3,

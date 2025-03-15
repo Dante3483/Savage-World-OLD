@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using SavageWorld.Runtime.Enums.World;
 
 namespace SavageWorld.Runtime.World
 {
@@ -10,7 +11,7 @@ namespace SavageWorld.Runtime.World
         public ushort WallId;
         public byte LiquidId;
 
-        //public TileTypes BlockType;
+        public TileType BlockType;
         public float FlowValue;
         public byte ColliderIndex;
 
@@ -43,17 +44,7 @@ namespace SavageWorld.Runtime.World
         #region Public Methods
         public static Tile GetEmpty()
         {
-            return new()
-            {
-                BlockId = 0,
-                WallId = 0,
-                SpriteId = 0,
-                //BlockType = TileTypes.Abstract,
-                Flags = 0,
-                ColliderIndex = byte.MaxValue,
-                LiquidId = byte.MaxValue,
-                FlowValue = 0,
-            };
+            return new() { ColliderIndex = byte.MaxValue, LiquidId = byte.MaxValue };
         }
         #endregion
 

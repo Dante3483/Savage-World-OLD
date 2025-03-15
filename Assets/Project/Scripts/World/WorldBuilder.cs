@@ -1,6 +1,7 @@
 using System;
 using SavageWorld.Runtime.Core;
 using SavageWorld.Runtime.Session.Info;
+using SavageWorld.Runtime.World.Generation;
 
 namespace SavageWorld.Runtime.World
 {
@@ -19,11 +20,14 @@ namespace SavageWorld.Runtime.World
         #endregion
 
         #region Public Methods
-        public void GenerateWorld()
+        public void GenerateWorld(WorldConfig config)
         {
             var worldInfo = new WorldInfo();
             worldInfo.Seed = new Random().Next(int.MinValue, int.MaxValue);
+            worldInfo.Config = config;
             GameManager.Instance.CurrentSession.WorldInfo = worldInfo;
+            var creator = new WorldCreator(worldInfo);
+            creator.Generate();
         }
 
         public void LoadWorld() { }

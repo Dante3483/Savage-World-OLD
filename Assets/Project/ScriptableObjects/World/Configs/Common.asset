@@ -9,38 +9,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d347b4e4b6010944941658361fdbf7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f6f59eda8c7a38448d0d27aa7209b10, type: 3}
   m_Name: Common
   m_EditorClassIdentifier: 
   _phases:
-    _items: []
+    _items:
+    - _key:
+        rid: 4969232157167583311
+      _value: 1
+      _isValid: 1
+    - _key:
+        rid: 4969232157167583312
+      _value: 1
+      _isValid: 1
+    - _key:
+        rid: 4969232157167583313
+      _value: 1
+      _isValid: 1
     _isReadOnly: 0
-  _disableAll: 0
-  _enableAll: 0
-  _flatWorldGeneration: 0
-  _landscapeGeneration: 0
-  _biomesGeneration: 0
-  _clustersGeneration: 0
-  _cavesGeneration: 0
-  _starterCavesGeneration: 0
-  _lakesGeneration: 0
-  _oasisesGeneration: 0
-  _grassSeeding: 0
-  _plantsGeneration: 0
-  _treesGeneration: 0
-  _pickUpItemsGeneration: 0
-  _setRandomTiles: 0
-  _blockProcessing: 0
-  _setPhysicsShapes: 0
   _layers:
     _items:
     - _key: 0
-      _value: {fileID: 0}
+      _value: {fileID: 11400000, guid: c32b6dc13e608e146a76c4f725905308, type: 2}
       _isValid: 1
-    - _key: 0
-      _value: {fileID: 0}
-      _isValid: 0
+    - _key: 1
+      _value: {fileID: 11400000, guid: d567690693b9ce0438659cda99da2fd3, type: 2}
+      _isValid: 1
+    - _key: 2
+      _value: {fileID: 11400000, guid: 2911879378e137c4ca734374c529d228, type: 2}
+      _isValid: 1
+    - _key: 3
+      _value: {fileID: 11400000, guid: 3ecc9b71de6a57d4180a719504678719, type: 2}
+      _isValid: 1
     _isReadOnly: 0
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4969232157167583311
+      type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
+      data: 
+    - rid: 4969232157167583312
+      type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
+      data: 
+    - rid: 4969232157167583313
+      type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
+      data: 

@@ -54,7 +54,7 @@ namespace SavageWorld.Runtime.Core.States
 
         private void CompleteInitialization()
         {
-            GameManager.Instance.ChangeState(GameStates.MainMenu);
+            GameManager.Instance.ChangeState(GameStateType.MainMenu);
         }
 
         private void InitializeData()
