@@ -1,5 +1,6 @@
 using SavageWorld.Runtime.Session.Info;
 using SavageWorld.Runtime.UI;
+using SavageWorld.Runtime.Utilities;
 
 namespace SavageWorld.Runtime.World.Generation
 {
@@ -34,7 +35,13 @@ namespace SavageWorld.Runtime.World.Generation
             {
                 if (phase.Value)
                 {
-                    phase.Key.Start();
+                    MethodTimer.MeasureAndLog(
+                        () =>
+                        {
+                            phase.Key.Start(_info);
+                        },
+                        phase.Key.GetType().Name
+                    );
                     progressBar.IncreaseValue(valuePerStep);
                 }
             }

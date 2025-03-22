@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SavageWorld.Runtime.UI.MainMenu.Elements
 {
-    public class UISlotBase : MonoBehaviour
+    public class UISlot : MonoBehaviour
     {
         #region Fields
         [SerializeField]
@@ -22,9 +22,9 @@ namespace SavageWorld.Runtime.UI.MainMenu.Elements
         #endregion
 
         #region Events / Delegates
-        public event Action<UISlotBase> SelectBtnClicked;
-        public event Action<UISlotBase> RemoveBtnClicked;
-        public event Action<UISlotBase> PinBtnClicked;
+        public event Action<UISlot> SelectBtnClicked;
+        public event Action<UISlot> RemoveBtnClicked;
+        public event Action<UISlot> PinBtnClicked;
         #endregion
 
         #region Monobehaviour Methods

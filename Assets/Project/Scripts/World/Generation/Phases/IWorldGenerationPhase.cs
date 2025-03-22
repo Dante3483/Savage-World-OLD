@@ -1,3 +1,5 @@
+using SavageWorld.Runtime.Session.Info;
+
 namespace SavageWorld.Runtime.World.Generation.Phases
 {
     public interface IWorldGenerationPhase
@@ -7,7 +9,7 @@ namespace SavageWorld.Runtime.World.Generation.Phases
         #endregion
 
         #region Public Methods
-        public void Start();
+        public void Start(WorldInfo info);
         #endregion
     }
 }

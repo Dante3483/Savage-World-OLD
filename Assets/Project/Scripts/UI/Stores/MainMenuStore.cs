@@ -5,7 +5,7 @@ using UnityEngine;
 namespace SavageWorld.Runtime.UI.Stores
 {
     [Serializable]
-    public class MainMenuStore : StoreBase
+    public class MainMenuStore : Store
     {
         #region Fields
         [SerializeField]

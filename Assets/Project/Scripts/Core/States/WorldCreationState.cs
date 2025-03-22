@@ -6,7 +6,7 @@ using SavageWorld.Runtime.Utilities.StateMachine;
 
 namespace SavageWorld.Runtime.Core.States
 {
-    public class WorldCreationState : StateBase
+    public class WorldCreationState : State
     {
         #region Fields
 

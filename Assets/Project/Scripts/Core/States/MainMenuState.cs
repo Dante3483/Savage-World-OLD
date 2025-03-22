@@ -3,7 +3,7 @@ using SavageWorld.Runtime.Utilities.StateMachine;
 
 namespace SavageWorld.Runtime.Core.States
 {
-    public class MainMenuState : StateBase
+    public class MainMenuState : State
     {
         #region Fields
 

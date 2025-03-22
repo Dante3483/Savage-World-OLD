@@ -15,15 +15,7 @@ MonoBehaviour:
   _phases:
     _items:
     - _key:
-        rid: 4969232157167583311
-      _value: 1
-      _isValid: 1
-    - _key:
-        rid: 4969232157167583312
-      _value: 1
-      _isValid: 1
-    - _key:
-        rid: 4969232157167583313
+        rid: 4969232157167583314
       _value: 1
       _isValid: 1
     _isReadOnly: 0
@@ -45,12 +37,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4969232157167583311
-      type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
-      data: 
-    - rid: 4969232157167583312
-      type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
-      data: 
-    - rid: 4969232157167583313
+    - rid: 4969232157167583314
       type: {class: FlatWorldGenerationPhase, ns: SavageWorld.Runtime.World.Generation.Phases, asm: SavageWorld.Runtime}
       data: 

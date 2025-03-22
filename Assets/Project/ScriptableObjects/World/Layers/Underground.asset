@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bd4bc1bfb19df449b6b72720b246aa, type: 3}
   m_Name: Underground
   m_EditorClassIdentifier: 
-  _layer: 0
+  _height: 800
+  _defaultBlock: {fileID: 11400000, guid: cea0e9219b36fed458b56520fb94798f, type: 2}
+  _defaultWall: {fileID: 11400000, guid: 7e380f8fa20c93c4bbfa74c587bf1fac, type: 2}

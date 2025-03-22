@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SavageWorld.Runtime.UI.MainMenu.Elements
 {
-    public class UIWorldSlot : UISlotBase
+    public class UIWorldSlot : UISlot
     {
         #region Fields
         [SerializeField]

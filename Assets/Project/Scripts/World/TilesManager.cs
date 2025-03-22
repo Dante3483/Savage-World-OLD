@@ -1,8 +1,9 @@
-using System.Diagnostics;
 using System.Threading.Tasks;
 using SavageWorld.Runtime.Core;
+using SavageWorld.Runtime.Utilities;
 using SavageWorld.Runtime.Utilities.Singleton;
-using Debug = UnityEngine.Debug;
+using SavageWorld.Runtime.World.Tiles;
+using UnityEngine;
 
 namespace SavageWorld.Runtime.World
 {
@@ -29,14 +30,39 @@ namespace SavageWorld.Runtime.World
         #region Public Methods
         public void Initialize()
         {
-            var stopwatch = Stopwatch.StartNew();
             var worldInfo = GameManager.Instance.CurrentSession.WorldInfo;
             _width = worldInfo.Width;
             _height = worldInfo.Height;
             _grid = new Tile[_width, _height];
             Parallel.For(0, _width, InitializeColumn);
-            stopwatch.Stop();
-            Debug.Log($"Initialization {stopwatch.Elapsed}");
+        }
+
+        public void SetBlockData(int x, int y, TileData data)
+        {
+            if (!IsWithinBounds(x, y))
+            {
+                return;
+            }
+            if (data == null)
+            {
+                return;
+            }
+            _grid[x, y].SetBlockData(data);
+            EventManager.OnBlockDataChanged(x, y);
+        }
+
+        public void SetWallData(int x, int y, TileData data)
+        {
+            if (!IsWithinBounds(x, y))
+            {
+                return;
+            }
+            if (data == null)
+            {
+                return;
+            }
+            _grid[x, y].SetWallData(data);
+            EventManager.OnWallDataChanged(x, y);
         }
         #endregion
 
@@ -47,6 +73,17 @@ namespace SavageWorld.Runtime.World
             {
                 _grid[x, y] = Tile.GetEmpty();
             }
+        }
+
+        private bool IsWithinBounds(int x, int y)
+        {
+            return x >= 0 && x < _width && y >= 0 && y < _height;
+        }
+
+        [ContextMenu("Generate preview")]
+        private void GeneratePreview()
+        {
+            _grid.ToTexture();
         }
         #endregion
     }

@@ -1,6 +1,6 @@
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
-    public abstract class SectionHandlerBase : ISectionHandler
+    public abstract class SectionHandler : ISectionHandler
     {
         #region Fields
         protected MainMenuManager _mainMenuManager;

@@ -2,7 +2,7 @@ using SavageWorld.Runtime.Utilities.StateMachine;
 
 namespace SavageWorld.Runtime.UI.MainMenu.States
 {
-    public class ConnectViaIPState : StateBase
+    public class ConnectViaIPState : State
     {
         #region Fields
 

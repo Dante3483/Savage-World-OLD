@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SavageWorld.Runtime.World.Tiles
 {
     [CreateAssetMenu(fileName = "NewPlantTileData", menuName = "World/Tiles/Plant")]
-    public class PlantTileData : TileDataBase<PlantTileId>
+    public class PlantTileData : TileDataWithGenericId<PlantTileId>
     {
         #region Fields
 
@@ -27,7 +27,7 @@ namespace SavageWorld.Runtime.World.Tiles
         #endregion
 
         #region Private Methods
-        protected override TileType GetDefaultType()
+        protected override TileType SetType()
         {
             return TileType.Plant;
         }

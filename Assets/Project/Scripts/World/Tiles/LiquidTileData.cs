@@ -4,7 +4,7 @@ using UnityEngine;
 namespace SavageWorld.Runtime.World.Tiles
 {
     [CreateAssetMenu(fileName = "NewLiquidTileData", menuName = "World/Tiles/Liquid")]
-    public class LiquidTileData : TileDataBase<LiquidTileId>
+    public class LiquidTileData : TileDataWithGenericId<LiquidTileId>
     {
         #region Fields
 
@@ -27,7 +27,7 @@ namespace SavageWorld.Runtime.World.Tiles
         #endregion
 
         #region Private Methods
-        protected override TileType GetDefaultType()
+        protected override TileType SetType()
         {
             return TileType.Liquid;
         }

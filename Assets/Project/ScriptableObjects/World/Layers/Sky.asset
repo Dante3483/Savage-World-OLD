@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bd4bc1bfb19df449b6b72720b246aa, type: 3}
-  m_Name: Air
+  m_Name: Sky
   m_EditorClassIdentifier: 
-  _layer: 0
+  _height: 500
+  _defaultBlock: {fileID: 11400000, guid: 1b68b5abf335f3e4bbcc2f487ceb096c, type: 2}
+  _defaultWall: {fileID: 11400000, guid: a9b7732bba573f04a93a60ae99b1888a, type: 2}

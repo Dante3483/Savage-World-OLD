@@ -1,6 +1,6 @@
 namespace SavageWorld.Runtime.UI.Stores
 {
-    public abstract class StoreBase
+    public abstract class Store
     {
         #region Fields
 

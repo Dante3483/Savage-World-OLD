@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
-    public abstract class SlotsSectionHandlerBase<TPrefabValue> : SectionHandlerBase
-        where TPrefabValue : UISlotBase
+    public abstract class SlotsSectionHandler<TPrefabValue> : SectionHandler
+        where TPrefabValue : UISlot
     {
         #region Fields
-        protected List<UISlotBase> _slots = new();
+        protected List<UISlot> _slots = new();
 
         [SerializeField]
         protected TPrefabValue _slotPrefab;
@@ -79,11 +79,11 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 
         protected abstract void OnCreateBtnClicked();
 
-        protected abstract void SlotSelectBtnClickedHandler(UISlotBase slot);
+        protected abstract void SlotSelectBtnClickedHandler(UISlot slot);
 
-        protected abstract void SlotRemoveBtnClickedHandler(UISlotBase slot);
+        protected abstract void SlotRemoveBtnClickedHandler(UISlot slot);
 
-        protected abstract void SlotPinBtnClickedHandler(UISlotBase slot);
+        protected abstract void SlotPinBtnClickedHandler(UISlot slot);
         #endregion
     }
 }

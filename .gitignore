@@ -78,3 +78,5 @@ crashlytics-build.properties
 # Saves folder inside assets
 /[Aa]ssets/[Ss]aves
 /[Aa]ssets/[Ss]aves.meta
+Assets/WorldPreview.png
+Assets/WorldPreview.png.meta

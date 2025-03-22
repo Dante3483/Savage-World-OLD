@@ -2,7 +2,7 @@ using SavageWorld.Runtime.Utilities.StateMachine;
 
 namespace SavageWorld.Runtime.Core.States
 {
-    public class GameplayState : StateBase
+    public class GameplayState : State
     {
         #region Fields
 

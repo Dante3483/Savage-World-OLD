@@ -1,14 +1,22 @@
+using System;
+using SavageWorld.Runtime.Enums.World;
 using SavageWorld.Runtime.World.Tiles;
 using UnityEngine;
 
 namespace SavageWorld.Runtime.World.Elements
 {
-    [CreateAssetMenu(fileName = "NewLayerData", menuName = "World/Layer data")]
-    public class LayerData : ScriptableObject
+    [Serializable]
+    public class Layer
     {
         #region Fields
         [SerializeField]
-        private int _height;
+        private LayerType _type;
+
+        [SerializeField]
+        private int _start;
+
+        [SerializeField]
+        private int _end;
 
         [SerializeField]
         private TileData _defaultBlock;
@@ -18,9 +26,20 @@ namespace SavageWorld.Runtime.World.Elements
         #endregion
 
         #region Properties
-        public int Height
+        public LayerType Type
         {
-            get => _height;
+            get => _type;
+            set => _type = value;
+        }
+        public int Start
+        {
+            get => _start;
+            set => _start = value;
+        }
+        public int End
+        {
+            get => _end;
+            set => _end = value;
         }
         public TileData DefaultBlock
         {
@@ -35,10 +54,6 @@ namespace SavageWorld.Runtime.World.Elements
         #endregion
 
         #region Events / Delegates
-
-        #endregion
-
-        #region Monobehaviour Methods
 
         #endregion
 

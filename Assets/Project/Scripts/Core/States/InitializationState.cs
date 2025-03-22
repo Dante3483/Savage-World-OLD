@@ -8,7 +8,7 @@ using SavageWorld.Runtime.World;
 
 namespace SavageWorld.Runtime.Core.States
 {
-    public class InitializationState : StateBase
+    public class InitializationState : State
     {
         #region Fields
 

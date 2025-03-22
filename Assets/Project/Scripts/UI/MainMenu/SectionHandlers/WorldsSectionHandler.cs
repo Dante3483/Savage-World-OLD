@@ -7,7 +7,7 @@ using UnityEngine;
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
     [Serializable]
-    public class WorldsSectionHandler : SlotsSectionHandlerBase<UIWorldSlot>
+    public class WorldsSectionHandler : SlotsSectionHandler<UIWorldSlot>
     {
         #region Fields
 
@@ -39,18 +39,18 @@ namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
             GameManager.Instance.ChangeState(GameStateType.WorldCreation);
         }
 
-        protected override void SlotPinBtnClickedHandler(UISlotBase slot)
+        protected override void SlotPinBtnClickedHandler(UISlot slot)
         {
             Debug.Log("NEED IMPLEMENT SLOT PIN");
         }
 
-        protected override void SlotRemoveBtnClickedHandler(UISlotBase slot)
+        protected override void SlotRemoveBtnClickedHandler(UISlot slot)
         {
             GameObject.Destroy(slot.gameObject);
             _slots.Remove(slot);
         }
 
-        protected override void SlotSelectBtnClickedHandler(UISlotBase slot)
+        protected override void SlotSelectBtnClickedHandler(UISlot slot)
         {
             var worldSlot = slot as UIWorldSlot;
             GameManager.Instance.CurrentSession.WorldInfo.Name = worldSlot.Name;

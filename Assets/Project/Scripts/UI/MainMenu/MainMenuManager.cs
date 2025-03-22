@@ -12,16 +12,16 @@ namespace SavageWorld.Runtime.UI.MainMenu
         private IStateMachine _stateMachine = new StateMachineWithHistory();
 
         [SerializeReference]
-        private SectionHandlerBase _initialSectionHandler = new InitialSectionHandler();
+        private SectionHandler _initialSectionHandler = new InitialSectionHandler();
 
         [SerializeReference]
-        private SectionHandlerBase _multiplayerSectionHandler = new MultiplayerSectionHandler();
+        private SectionHandler _multiplayerSectionHandler = new MultiplayerSectionHandler();
 
         [SerializeReference]
-        private SectionHandlerBase _playersSectionHandler = new PlayersSectionHandler();
+        private SectionHandler _playersSectionHandler = new PlayersSectionHandler();
 
         [SerializeReference]
-        private SectionHandlerBase _worldSelectionSectionHandler = new WorldsSectionHandler();
+        private SectionHandler _worldSelectionSectionHandler = new WorldsSectionHandler();
         #endregion
 
         #region Properties

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace SavageWorld.Runtime.UI.MainMenu.SectionHandlers
 {
     [Serializable]
-    public class MultiplayerSectionHandler : SectionHandlerBase
+    public class MultiplayerSectionHandler : SectionHandler
     {
         #region Fields
         [SerializeField]

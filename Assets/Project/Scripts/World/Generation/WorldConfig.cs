@@ -11,22 +11,20 @@ namespace SavageWorld.Runtime.World.Generation
     {
         #region Fields
         [SerializeField]
-        private SerializableDictionary<WorldGenerationPhaseBase, bool> _phases;
+        private SerializableDictionary<WorldGenerationPhase, bool> _phases;
 
         [SerializeField]
         private SerializableDictionary<LayerType, LayerData> _layers;
         #endregion
 
         #region Properties
-        public SerializableDictionary<WorldGenerationPhaseBase, bool> Phases
+        public SerializableDictionary<WorldGenerationPhase, bool> Phases
         {
             get => _phases;
-            set => _phases = value;
         }
         public SerializableDictionary<LayerType, LayerData> Layers
         {
             get => _layers;
-            set => _layers = value;
         }
         #endregion
 
